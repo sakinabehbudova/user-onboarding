@@ -1,12 +1,20 @@
-import React from 'react';
+import React from "react";
+import "./App.css";
+import ContactDetails from './ContactDetails/ContactDetails';
+import Sidebar from './Sidebar/Sidebar'
 import './App.css';
-import ContactDetails from "./ContactDetails/ContactDetails";
 
 
 function App() {
+
   return (
     <div>
-      <h1>My App</h1>
+      <div id="user-onboarding">
+      <div className="row">
+        <div className="col-md-4 px-0"><Sidebar/></div>
+        <div className="col-md-8 px-0"><ContactDetails/></div>
+      </div>
+      </div>
     </div>
   );
 }
