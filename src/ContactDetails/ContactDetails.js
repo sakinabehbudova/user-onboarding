@@ -1,15 +1,10 @@
 import React from "react";
-import { Button, Form, Link } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 function ContactDetails() {
-  /* var input = document.querySelector("input"),
-    
-    result = document.querySelector("#result");
-
-var iti = intlTelInput(input, {
-  initialCountry: ""
-}); */
-
   return (
     <>
       <div id="contactDetails">
@@ -19,9 +14,9 @@ var iti = intlTelInput(input, {
               <div className="row">
                 <div className="steps col-4">Step 1 of 3</div>
                 <div className="details col-5">Lost or have trouble?</div>
-                <a className="help col" to="">
+                <Link className="help col" to="">
                   Get help &#8594;
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -42,8 +37,17 @@ var iti = intlTelInput(input, {
                       </div>
                     </div>
                     <div className="col-6">
-                      <input type="tel" />
-                      <p id="result"></p>
+                      
+                    
+                    <PhoneInput
+                    country='de'
+              inputProps={{
+                name: 'phone',
+                
+                  required: true,
+              autoFocus: true
+             }}
+              />
                     </div>
                   </div>
                   <div>
@@ -52,16 +56,14 @@ var iti = intlTelInput(input, {
                   </div>
                   <div>
                     <select>
-                      <option value="" disabled selected hidden>
-                        Select a Country
-                      </option>
-                      <option>Azerbaijan</option>
+                      <option value="AZ">Azerbaijan</option>
                       <option value="AF">Turkey</option>
                       <option value="AX">Aland Islands</option>
                       <option value="AL">Albania</option>
                       <option value="DZ">Algeria</option>
                       <option value="AS">American Samoa</option>
                     </select>
+                    <label>Country</label>
                   </div>
                 </Form>
               </div>
@@ -81,7 +83,10 @@ var iti = intlTelInput(input, {
                   &larr;Back to the homepage
                 </a>
                 <Button className="skip-btn col-3">Skip for now &#8594;</Button>
-                <Button className="next-step-btn col-3">Next step</Button>
+                <Link to="/user-onboarding/plans" className="col-3">
+                  {" "}
+                  <Button className="next-step-btn">Next step</Button>{" "}
+                </Link>
               </div>
             </div>
             <div className="offset-1"></div>

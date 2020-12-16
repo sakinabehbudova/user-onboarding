@@ -1,5 +1,8 @@
 #user-onboarding {
-  padding: 100px 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 4%;
+  padding-right: 4%;
   background: #dce8ff;
 }
 #sidebar {
@@ -115,7 +118,9 @@
   color: #35a0ee;
 }
 /*Contact Details*/
-#contactDetails {
+#contactDetails,
+#investmentPlans,
+#investmentPrefences {
   padding-top: 36px;
   padding-bottom: 50px;
   background-color: #fff !important;
@@ -148,27 +153,32 @@
 .details2 {
   margin-bottom: 15px;
 }
-#contactDetails h1 {
-  font-weight: 800;
+h1 {
+  font-weight: 800 !important;
   font-size: 28px;
   line-height: 36px;
   letter-spacing: 0.02em;
-  margin-top: 90px;
+  margin-top: 90px !important;
   color: #0b1d2e;
 }
-#contactDetails h3 {
-  font-weight: bold;
-  font-size: 21px;
+h3 {
+  font-weight: bold !important;
+  font-size: 21px !important;
   line-height: 28px;
   margin-top: 55px;
   color: #0b1d2e;
+}
+#contactDetails h3{
+  margin-top: 20px;
+  margin-bottom: 36.5px;
 }
 .box3 {
   margin-top: 50px;
   position: relative;
 }
 .box3 input,
-.box3 select {
+.box3 select,
+.number-range input {
   padding: 10px 0;
   box-sizing: border-box;
   width: 100%;
@@ -177,25 +187,48 @@
   border-bottom: 2px solid #dce8ff;
   background-color: #fff;
   margin-bottom: 30px;
+  font-weight: 600;
+font-size: 21px;
+line-height: 28px;
+/* identical to box height, or 133% */
+
+letter-spacing: 0.02em;
+
+color: #0B1D2E;
+
 }
-.box3 Form div {
+.box3 Form div,
+.number-range .range .row {
   position: relative !important;
 }
+
 .box3 label {
-  position: absolute;
+  position: absolute !important;
   top: 10px;
   pointer-events: none;
   left: 0;
   color: #a4aeb4;
 }
-.box3 input:focus ~ label {
-  top: -12px;
+.number-range label {
+  position: absolute !important;
+  top: 40px;
+  left: 15px !important;
+  pointer-events: none;
+  left: 0;
+  color: #a4aeb4;
+}
+.box3 input:focus ~ label,
+.box3 select:focus ~ label,
+.number-range input:focus ~ label {
   left: 0;
   color: #2696e8;
   transition: 0.4s ease-in-out;
 }
 .box3 input:focus ~ label,
-.box3 input:valid ~ label {
+.box3 input:valid ~ label,
+.box3 select:focus ~ label,
+.box3 select:valid ~ label,
+.number-range input:focus ~ label {
   top: -12px;
   left: 0;
   color: #2696e8;
@@ -204,9 +237,35 @@
   line-height: 20px;
   letter-spacing: 0.02em;
 }
+.number-range input:focus ~ label {
+  top: 25px;
+}
+.number-range input:valid ~ label {
+  top: 25px;
+}
 .box3 input:focus,
-.box3 input:valid {
+.box3 input:valid,
+.number-range input:focus {
   border-bottom: 2px solid #2696e8;
+}
+.react-tel-input
+{margin-top:15px;}
+.react-tel-input .form-control{
+  border:none !important;
+  border-bottom:2px solid #35a0ee !important;
+  box-shadow:none !important;
+  border-radius:1px !important;
+  width:100% !important;
+  
+}
+.react-tel-input .flag-dropdown{
+  width:0px;
+  border:none !important;
+}
+.react-tel-input .selected-flag .flag {
+  margin-top:-25px !important;
+  margin-left:10px;
+
 }
 .footer {
   margin-top: 81px;
@@ -216,7 +275,7 @@
 }
 .skip-btn,
 .next-step-btn {
-  width: 150px !important;
+  width: 100%;
   height: 48px;
   font-weight: 600 !important;
   font-size: 16px !important;
@@ -227,12 +286,154 @@
   letter-spacing: 0.02em;
   border-radius: 4px;
 }
-
 .skip-btn {
   color: #35a0ee !important;
   background: rgba(53, 160, 238, 0.1) !important;
 }
 .next-step-btn {
-  background-color:#35a0ee ;
+  background-color: #35a0ee;
   margin-left: 16px;
+}
+/*Investment Plans*/
+#investmentPlans .header2 {
+  margin-top: 46px;
+  margin-bottom: 50px;
+}
+.buttons {
+  margin-top: 30px;
+  margin-bottom: 169px;
+}
+.buttons span {
+  /* style this span element so we can display nicely, this stlying is not neccessary */
+  margin-right: 20px;
+  float: left;
+  position: relative;
+  background-color: #fff;
+} /*
+input[type=range]::-webkit-slider-thumb {
+	pointer-events: all;
+	width: 24px;
+	height: 24px;
+	-webkit-appearance: none;
+  
+}*/
+
+.range {
+  width: 500px;
+  height: 4px;
+
+  border-radius: 4px;
+  background-color: #ddd;
+}
+
+.range__button_1,
+.range__button_2 {
+  position: absolute;
+
+  margin-bottom: 30px;
+
+  width: 20px;
+  height: 20px;
+
+  cursor: move;
+  transform: translateY(-50%);
+
+  border: none;
+
+  background-color: #2696e8;
+}
+.range__between {
+  position: absolute;
+  height: 5px;
+  width: 0px;
+
+  border: none;
+  background-color: #35a0ee;
+}
+.range_inpt1,
+.range_inpt2 {
+  margin-top: 40px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.number-range {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 140px;
+  display: flex;
+
+  align-items: center;
+}
+#investmentPrefences .header2{
+  margin-top: 46px;
+}
+.boxes {
+  margin-top: 20px;
+  margin-bottom: 43px;
+}
+.boxes span {
+  margin-bottom: 20px;
+}
+
+input[type="radio"] {
+  /* hide the inputs */
+  position: absolute;
+  left: 10px;
+  top: 18px;
+}
+input[type="checkbox"] {
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  font-weight: 500;
+}
+input[type="checkbox"] + label {
+  width: 100%;
+  height: 148px;
+  font-size: 14px;
+  padding-top: 80px;
+  padding-bottom: 20px !important;
+  padding-left: 14px;
+  margin-bottom: 15px;
+}
+input[type="radio"] + label {
+  width: 136px;
+  height: 48px;
+  padding: 10px 40px;
+  font-size: 16px;
+}
+/* style your lables/button */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  /* keep pointer so that you get the little hand showing when you are on a button */
+  cursor: pointer;
+  /* the following are the styles */
+
+  border: 2px solid #d5d9dc;
+
+  background-color: #fff;
+
+  box-shadow: 0px 0px 20px rgba(213, 217, 220, 0.05);
+  line-height: 24px;
+  font-weight: 700;
+  color: black;
+  border-radius: 4px;
+}
+
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+  /* style for the checked/selected state */
+  background: #f6fbff;
+  border: 2px solid #35a0ee;
+
+  color: #35a0ee;
 }
